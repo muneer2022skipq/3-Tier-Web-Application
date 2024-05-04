@@ -14,5 +14,5 @@ resource "aws_rds_cluster" "aurora_severless" {
   skip_final_snapshot          = true
   deletion_protection          = false
   db_subnet_group_name         = aws_db_subnet_group.my_db_subnet_group.name
-  
+  vpc_security_group_ids = [ aws_security_group.dev-sg.id ]
 }
